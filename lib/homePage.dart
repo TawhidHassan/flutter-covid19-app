@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_covid19/panels/infoPanel.dart';
 import 'package:flutter_covid19/panels/mostEffectiveCountry.dart';
 import 'package:flutter_covid19/panels/worldWidePanel.dart';
 import 'package:http/http.dart' as http;
@@ -107,6 +108,18 @@ class _HomeState extends State<Home> {
                 : MostEffectedPanel(
               countryData: countryData,
             ),
+
+            InfoPanel(),
+            SizedBox(height: 20,),
+            Center(
+              child: Text("WE ARE TOGETHER IN THE FIGHT",style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),),
+            ),
+            SizedBox(height: 50,),
+
+
 
           ],
         ),
