@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_covid19/pages/countryPage.dart';
@@ -48,6 +49,13 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         centerTitle: false,
         title: Text("COVID-19 Tracker"),
+        actions: <Widget>[
+          IconButton(icon: Icon(Theme.of(context).brightness==Brightness.light?Icons.lightbulb_outline:Icons.highlight),
+              onPressed: (){
+                  DynamicTheme.of(context).setBrightness(Theme.of(context).brightness==Brightness.light?Brightness.dark:Brightness.light);
+              }
+          )
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
